@@ -1,0 +1,15 @@
+extends layout
+
+block content
+	form(action="/users/signup" method="post")
+		label(for="email") Email *
+		input#email(type="email" name="email" required=true)
+		label(for="password") Password *
+		input#password(type="password" name="password" required=true)
+		label(for="name") Name
+		input#name(type="text" name="name")
+		label(for="gender") Gender
+		select#gender(name="gender")
+			option(value="m") Male
+			option(value="f") Female
+		input(type="submit" value="Signup")

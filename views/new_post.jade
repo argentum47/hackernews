@@ -1,0 +1,7 @@
+extends layout
+
+block content
+	form(action="/posts/create" method="post")
+		label(for="content")
+		textarea#content(name="content")
+		input(type="submit" value="Post")

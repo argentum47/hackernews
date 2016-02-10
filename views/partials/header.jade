@@ -1,0 +1,19 @@
+.navbar
+	a(href="/") Home
+	ul.nav.list-unstyled.navbar-right
+		if !user
+			li
+				a(href="/users/signup") Signup
+			li
+				a(href="/users/login") Login
+		else
+			li
+				if user.profile.picture
+					img(src='#{user.profile.picture}')
+				else
+					img(src='#{user.gravatar(50)}')
+				| #{user.profile.name || user.email}&nbsp;
+			li
+				a(href="/posts/new") Create News
+			li
+				a(href="/logout") Logout

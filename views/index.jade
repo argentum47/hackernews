@@ -1,0 +1,13 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+
+  ul
+    each post in posts
+      li
+        span #{post.points}
+        a(href=`/posts/post.id/vote`) vo^te
+        p= post.content
+        span= post.createdAt
